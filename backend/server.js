@@ -14,9 +14,9 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 
-// const contactRoute=require('./routes/contactRoute')
-// const resisterAndLogin = require('./routes/ResisterAndLogin');
-// const contactDetails=require('./routes/contactDetailsRoute')
+const contactRoute=require('./routes/contactRoute')
+const resisterAndLogin = require('./routes/RegisterAndLogin');
+const contactDetails=require('./routes/contactDetailsRoute')
 
 app.use(cors());
 
@@ -27,15 +27,15 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-// app.use(resisterAndLogin);
+app.use(resisterAndLogin);
 
 
 
-// app.use('/contacts',checkToken,contactRoute);
+app.use('/contacts',checkToken,contactRoute);
 
 
 
-// app.use('/contacts',checkToken,contactDetails);
+app.use('/contacts',checkToken,contactDetails);
 
 
 

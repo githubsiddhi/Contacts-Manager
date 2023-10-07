@@ -46,7 +46,7 @@ s
 
         let files=await contactModel.insertMany(jsonObj);
         
-        //console.log(files);
+        console.log(files);
 
         fs.unlink(file.path, (err) => {
           if (err) throw err;
